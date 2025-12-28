@@ -10,7 +10,7 @@ public abstract class Person
     public string FirstName { get; set; } = string.Empty;
     public string LastName { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
-    public DateTime? DateOfBirth { get; set; }
+    public DateOnly? DateOfBirth { get; set; }
     public DateTime CreatedAt { get; set; }
 
     /// <summary>
@@ -31,9 +31,9 @@ public abstract class Person
     {
         if (!DateOfBirth.HasValue) return null;
 
-        var today = DateTime.Today;
+        var today = DateOnly.FromDateTime(DateTime.Today);
         var age = today.Year - DateOfBirth.Value.Year;
-        if (DateOfBirth.Value.Date > today.AddYears(-age)) age--;
+        if (DateOfBirth.Value > today.AddYears(-age)) age--;
         return age;
     }
 }

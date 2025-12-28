@@ -32,7 +32,7 @@ public class StudentService
         return await _studentRepository.GetByEmailAsync(email);
     }
 
-    public async Task<int> CreateStudentAsync(string firstName, string lastName, string email, DateTime? dateOfBirth = null)
+    public async Task<int> CreateStudentAsync(string firstName, string lastName, string email, DateOnly? dateOfBirth = null)
     {
         // Check if email already exists
         var existing = await _studentRepository.GetByEmailAsync(email);
@@ -52,7 +52,7 @@ public class StudentService
         return await _studentRepository.CreateAsync(student);
     }
 
-    public async Task<bool> UpdateStudentAsync(int id, string firstName, string lastName, string email, DateTime? dateOfBirth)
+    public async Task<bool> UpdateStudentAsync(int id, string firstName, string lastName, string email, DateOnly? dateOfBirth)
     {
         var student = await _studentRepository.GetByIdAsync(id);
         if (student == null)

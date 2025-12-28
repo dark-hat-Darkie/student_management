@@ -130,7 +130,7 @@ public class ConsoleMenu
 
         Console.Write("Date of Birth (yyyy-MM-dd, or leave empty): ");
         var dobInput = Console.ReadLine()?.Trim();
-        DateTime? dob = string.IsNullOrEmpty(dobInput) ? null : DateTime.Parse(dobInput);
+        DateOnly? dob = string.IsNullOrEmpty(dobInput) ? null : DateOnly.Parse(dobInput);
 
         try
         {
@@ -239,7 +239,7 @@ public class ConsoleMenu
         var currentDob = student.DateOfBirth?.ToString("yyyy-MM-dd") ?? "not set";
         Console.Write($"Date of Birth [{currentDob}]: ");
         var dobInput = Console.ReadLine()?.Trim();
-        DateTime? dob = string.IsNullOrEmpty(dobInput) ? student.DateOfBirth : DateTime.Parse(dobInput);
+        DateOnly? dob = string.IsNullOrEmpty(dobInput) ? student.DateOfBirth : DateOnly.Parse(dobInput);
 
         try
         {
@@ -370,7 +370,7 @@ public class ConsoleMenu
 
         Console.Write("Date of Birth (yyyy-MM-dd, or leave empty): ");
         var dobInput = Console.ReadLine()?.Trim();
-        DateTime? dob = string.IsNullOrEmpty(dobInput) ? null : DateTime.Parse(dobInput);
+        DateOnly? dob = string.IsNullOrEmpty(dobInput) ? null : DateOnly.Parse(dobInput);
 
         try
         {
@@ -487,7 +487,7 @@ public class ConsoleMenu
         var currentDob = teacher.DateOfBirth?.ToString("yyyy-MM-dd") ?? "not set";
         Console.Write($"Date of Birth [{currentDob}]: ");
         var dobInput = Console.ReadLine()?.Trim();
-        DateTime? dob = string.IsNullOrEmpty(dobInput) ? teacher.DateOfBirth : DateTime.Parse(dobInput);
+        DateOnly? dob = string.IsNullOrEmpty(dobInput) ? teacher.DateOfBirth : DateOnly.Parse(dobInput);
 
         try
         {

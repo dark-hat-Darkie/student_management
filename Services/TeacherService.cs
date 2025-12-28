@@ -31,7 +31,7 @@ public class TeacherService
     }
 
     public async Task<int> CreateTeacherAsync(string firstName, string lastName, string email,
-        string subject, string? department = null, DateTime? dateOfBirth = null)
+        string subject, string? department = null, DateOnly? dateOfBirth = null)
     {
         // Check if email already exists
         var existing = await _teacherRepository.GetByEmailAsync(email);
@@ -54,7 +54,7 @@ public class TeacherService
     }
 
     public async Task<bool> UpdateTeacherAsync(int id, string firstName, string lastName, string email,
-        string subject, string? department, DateTime? dateOfBirth)
+        string subject, string? department, DateOnly? dateOfBirth)
     {
         var teacher = await _teacherRepository.GetByIdAsync(id);
         if (teacher == null)
